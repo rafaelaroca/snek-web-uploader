@@ -1,28 +1,147 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://github.com/dbuezas/arduino-web-uploader/releases/download/v1.0.0/main.js"></script>
-    <meta
-      http-equiv="origin-trial"
-      content="AlA/bWMuUzaxMDk3vFyUBNjsp8GeSiuCCUca1UQqeqWfTdAe7Pb9RWI8I7XVfJU/rdks5YA25qT7cNw9gpahSAoAAABReyJvcmlnaW4iOiJodHRwczovL2RidWV6YXMuZ2l0aHViLmlvOjQ0MyIsImZlYXR1cmUiOiJTZXJpYWwiLCJleHBpcnkiOjE2MDYwNzY5MDl9"
-    />
-  </head>
-  <body>
-    <h1>
-      <a href="https://github.com/dbuezas/arduino-web-uploader">https://github.com/dbuezas/arduino-web-uploader</a>
-    </h1>
-    <button arduino-uploader hex-href="./test/Blink.ino.lgt8f328p.hex" board="lgt8f328p" verify>
-      Upload Blink to lgt8f328p [<span class="upload-progress"></span>]
-    </button>
-    <button arduino-uploader hex-href="./test/Blink.ino.uno.hex" board="nano" verify>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Snek Web Uploader</title>
+        <!-- JSs -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- CSSs -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="jumbotron">
+			<center>
+			  <h1>Snek Lang firmware uploader</h1>
+			  <img src=https://rafaelaroca.files.wordpress.com/2021/08/image.png>
+			</center>
+
+
+  <p>
+  <a href=https://sneklang.org/>Snek Lang (https://sneklang.org/)</a> is a minimal Python implementation for microcontrollers like AtMega328 and AtMega2560. It works nicely on Arduino!
+
+  <p>
+  This page allows you to upload sneklang firmware directly to Arduino UNO, Nano or Pro Mini. Simply click on the button below, select your Arduino port and the firmware will be flashed on your Arduino from your web browser! No software is needed!
+  </p>
+
+  <h3>Step 1: test the upload</h3>
+  <p>
+  This is an optional step to test if your board is connected and if it is correctly flashed from the web browser. Select the option that fits your board and click the button. If the flash is successfull, the Arduino LED will staring blinking.
+  </p>
+
+  Option 1:  <button arduino-uploader hex-href="./test/Blink.ino.uno.hex" board="nano" verify>
       Upload Blink to nano/uno/pro/pro-mini [<span class="upload-progress"></span>]
     </button>
-    <button arduino-uploader hex-href="./test/Blink.ino.uno.hex" board="nanoOldBootloader" verify>
+    <br>
+    <br>
+    Option 2: <button arduino-uploader hex-href="./test/Blink.ino.uno.hex" board="nanoOldBootloader" verify>
       Upload Blink to nano with old bootloader (most chinese clones) [<span class="upload-progress"></span>]
     </button>
-  </body>
+
+    <br>
+    <br>
+
+  <h3>Step 2: upload snek firmware</h3>
+  <p>
+	  This will flash (upload) the sneklang firmwre to your Arduino! Select the board and click Upload. The firmwared uploaded will be snek-uno-1.5.hex.
+  </p>
+  Option 1:  <button arduino-uploader hex-href="./snek-uno-1.5.hex" board="nano" verify>
+      Upload Snek to nano/uno/pro/pro-mini [<span class="upload-progress"></span>]
+    </button>
+    <br>
+    <br>
+    Option 2: <button arduino-uploader hex-href="./snek-uno-1.5.hex" board="nanoOldBootloader" verify>
+      Upload Snek to nano with old bootloader (most chinese clones) [<span class="upload-progress"></span>]
+    </button>
+
+    <br>
+    <br>
+
+  <h3>Step 3: Access snek terminal from the web browser!</h3>
+  <p>
+  After flashing the board, you can interact with it using this web based terminal. Click on the link below, select 38400, and click connect. Next, you can send <b>snek</b> commands to the boad!
+  </p>
+
+  <a href= https://bipes.net.br/aroca/web-serial-terminal/>https://bipes.net.br/aroca/web-serial-terminal/</a>
+
+    <br>
+    <br>
+
+  <h3>Step 4: Program snek using blocks (BIPES) (optional)</h3>
+  <p>
+  If you want, you can also use snek with <a href=https://bipes.net.br/wp/>BIPES</a> to quickly build snek programs using block based proramming!
+  </p>
+
+  <a href=http://bipes.net.br/beta2/ui/>Access BIPES now to build Snek programs</a>
+
+  <p>BIPES also allows programs to be shared by links. The links below are two block based snek programs that you can edit and run, by clicking on the links below:</p>
+
+    
+  <a href=https://bipes.net.br/beta2/ui/#pyjw33>Snek/BIPES Program to blink the LED at pin 13</a>
+  <br>
+  <br>
+  <a href=https://bipes.net.br/beta2/ui/#q9pkcn>Snek/BIPES Program to read the Arduino ADC</a>
+
+	
+		    </div>
+                </div>
+            </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="jumbotron">
+			    <h2>Info and references</h2>
+			    <a href=https://sneklang.org>Snek: A Python-inspired Language for Embedded Devices</a>
+
+<br>
+<br>
+Note: this page can be downloaded as <a href=https://github.com/rafaelaroca/snek-web-uploader/archive/refs/heads/master.zip>a ZIP file</a> and used offline!
+
+<br>
+<br>
+<b>Snek Firmware obtained from:</b>
+<br>
+<a href=https://sneklang.org/dist/>https://sneklang.org/dist/</a>
+<br>
+<br>
+<b>Related repositores:</b>
+<br>
+<a href=https://github.com/rafaelaroca/web-serial-terminal>https://github.com/rafaelaroca/web-serial-terminal</a> (Web based Serial Terminal sources)
+<br>
+<a href=https://github.com/keith-packard/snek>https://github.com/keith-packard/snek</a> (Snek sources)
+<br>
+<a href=https://github.com/rafaelaroca/snek-web-uploader>https://github.com/rafaelaroca/snek-web-uploader</a> (the code of this page you are viewing)
+<br>
+<a href="https://github.com/dbuezas/arduino-web-uploader">https://github.com/dbuezas/arduino-web-uploader</a> (the base code for this one. Thanks!)
+<br>
+<a href=https://github.com/rafaelaroca/BIPES_ui_testing>https://github.com/rafaelaroca/BIPES_ui_testing</a> (BIPES Project)
+
+	
+		    </div>
+                </div>
+            </div>
+
+
+
+    </body>
 </html>
+
+
+

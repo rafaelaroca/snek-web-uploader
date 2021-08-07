@@ -1,0 +1,38 @@
+body{
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 40px;
+    background-color:grey;
+}
+a {
+    transition: opacity 0.2s;
+}
+a:hover{
+    opacity: 0.8;
+    text-decoration: none;
+}
+h2,h3{
+    font-weight: 900;
+}
+header {
+    height: 270px;
+    background-repeat: none;
+    background-position: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+header .container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+}
+.jumbotron { 
+    align-items: stretch;
+}
+div.col {
+    margin: 15px 0;
+}
+.item {
+    height: 125px;
+    padding: 10px 20px;
+}
